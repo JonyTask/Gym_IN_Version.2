@@ -13,7 +13,7 @@ class ProfileRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,20 @@ class ProfileRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'age'=>['required','numeric'],
+            'gender'=>['required'],
+            'preMustle'=>['required'],
+            'PR_TEXT'=>['required'],
+        ];
+    }
+
+    public function messages(){
+        return [
+            'age.required'=>['年齢を入力してください'],
+            'age.numeric'=>['年齢を数字で入力してください'],
+            'gender.required'=>['性別を選択してください'],
+            'preMustle.required'=>['好きな筋肉を入力してください'],
+            'PR_TEXT'=>['自己紹介文を入力してください'],
         ];
     }
 }

@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\Gym;
 use App\Models\Message;
+use App\Http\Requests\ProfileRequest;
+use App\Http\Requests\GymRequest;
+use App\Http\Request\UserSearchRequest;
 
 class UserController extends Controller
 {
@@ -22,7 +25,7 @@ class UserController extends Controller
 
         $lines = array();
         if($UserGym != null){
-            $lines = message::where('belongGym',$UserGym)->get();
+            $lines = Message::where('belongGym',$UserGym)->get();
         }
 
         if($UserAge == null){
@@ -55,7 +58,7 @@ class UserController extends Controller
         return view('display.basic',$param);
     }
 
-    public function ProfileEdit(){
+    public function ProfileEdit(ProfileRequest $request){
         $user = Auth::user();
         $user->age = $request->age;
         $user->gender = $request->gender;
@@ -77,16 +80,16 @@ class UserController extends Controller
         return redirect('base');
     }
 
-    public function Search(){
-        $data_prefecture = $_GET['prefecture'];
-        $data_city =$_GET['city'];
-        $items = gym::where('prefecture', $data_prefecture)->where('city', $data_city)->get();
+    public function Search(GymRequest $request){
+        $data_prefecture = $request->prefecture;
+        $data_city = $request->city;
+        $items = Gym::where('prefecture', $data_prefecture)->where('city', $data_city)->get();
         return view('display.search',['items'=>$items]);
     }
 
-    public function Profile(){
-        $data_search_user = $_GET['UserPro'];
-        $item=fake::where('name', $data_search_user)->first();
+    public function Profile(UserSearchRequest $request){
+        $data_search_user = $request->UserPro;
+        $item=User::where('name', $data_search_user)->first();
 
         return view('display.profile',['item'=>$item]);
     }

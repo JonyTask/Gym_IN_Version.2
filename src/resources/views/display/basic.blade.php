@@ -225,7 +225,7 @@
             @csrf
             <p>プロフィールを知りたいユーザー名を入力してください</p>
             <input type="text" name="UserPro" id="UserPro" autocomplete="off">
-            <input type="submit" class="submit_" name="UserProSearch" value="検索">
+            <input type="submit" class="submit_" value="検索">
         </form>
         </div>
     </div>

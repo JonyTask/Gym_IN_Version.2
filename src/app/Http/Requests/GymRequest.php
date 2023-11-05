@@ -13,7 +13,7 @@ class GymRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,15 @@ class GymRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'prefecture'=>'required',
+            'city'=>'required',
+        ];
+    }
+
+    public function messages(){
+        return [
+            'prefecture.required'=>'都道府県を入力してください',
+            'city.required'=>'市町村を入力してください',
         ];
     }
 }
