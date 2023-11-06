@@ -24,6 +24,9 @@
                         @endforeach
                     @endif
                 </select>
+                @error('Chat_Gym')
+                    {{$message}}
+                @enderror
                 <input type="submit" value="選択">
             </form>
 

@@ -7,10 +7,12 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\Gym;
 use App\Models\Message;
+use App\Http\Requests\MessageRequest;
+use App\Http\Requests\SetRequest;
 
 class MessageController extends Controller
 {
-    public function SendMessage(Request $request){
+    public function SendMessage(MessageRequest $request){
         if($user->Chat_Gym != null && $request->message != null){
             $message = new message();
             $message->name = $user->name;
@@ -22,7 +24,7 @@ class MessageController extends Controller
         }
     }
 
-    public function SetGym(Request $request){
+    public function SetGym(SetRequest $request){
         $user = Auth::user();
         $setGym = $request->Chat_Gym;
 

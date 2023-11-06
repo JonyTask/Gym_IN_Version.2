@@ -14,10 +14,16 @@
                     <div id="prefectureArea">
                         <label>都道府県</label>
                         <input type="text" name="prefecture" id="prefectureText">
+                        @error('prefecture')
+                            {{$message}}
+                        @enderror
                     </div>
                     <div id="cityArea">
                         <label>市区町村</label>
                         <input type="text" name="city" id="cityText">
+                        @error('city')
+                            {{$message}}
+                        @enderror
                     </div>
                     <input type="submit" value="検索" name="search" class="submit_" id="submit_search">
                 </form>
@@ -81,6 +87,9 @@
                             <th>年齢</th>
                             <td>
                                 <input type="number" name="age"  value="{{$UserAge}}">
+                                @error('age')
+                                    {{$message}}
+                                @enderror
                             </td>
                         </tr>
 
@@ -91,6 +100,9 @@
                                     <option value="男性">男性</option>
                                     <option value="女性">女性</option>
                                 </select>
+                                @error('gender')
+                                    {{$message}}
+                                @enderror
                             </td>
                         </tr>
                         <tr>
@@ -103,12 +115,18 @@
                             <th>好きな筋肉</th>
                             <td>
                                 <input type="text" name="preMustle" value="{{$UserMustle}}">
+                                @error('preMustle')
+                                    {{$message}}
+                                @enderror
                             </td>
                         </tr>
                         <tr>
                             <th>自己PR文</th>
                             <td>
                                 <input type="text" name="PR_TEXT" value="{{$UserPR}}">
+                                @error('PR_TEXT')
+                                    {{$message}}
+                                @enderror
                             </td>
                         </tr>
                     </table>
@@ -145,6 +163,9 @@
                     @csrf
                     <textarea name="message"></textarea>
                     <input type="submit" name="add" value="📨">
+                    @error('message')
+                        {{$message}}
+                    @enderror
                 </form>
             </div>
         @endif
@@ -226,6 +247,9 @@
             <p>プロフィールを知りたいユーザー名を入力してください</p>
             <input type="text" name="UserPro" id="UserPro" autocomplete="off">
             <input type="submit" class="submit_" value="検索">
+            @error('UserPro')
+                {{$message}}
+            @enderror
         </form>
         </div>
     </div>
