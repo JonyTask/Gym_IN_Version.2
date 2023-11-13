@@ -26,9 +26,9 @@ class MessageController extends Controller
 
     public function SetGym(SetRequest $request){
         $user = Auth::user();
-        $setGym = $request->Chat_Gym;
+        $setGym = $request->Gym_setting;
 
-        $$user->Chat_Gym = $setGym;
+        $user->Chat_Gym = $setGym;
         $user->save();
 
         return redirect('/base');

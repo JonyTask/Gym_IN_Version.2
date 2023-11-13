@@ -15,7 +15,10 @@ class CreateMessagesTable extends Migration
     {
         Schema::create('_messages', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('content',100);
+            $table->string('Gym_Name');
+            $table->timestamp('created_at')->useCurrent()->nullable();
+            $table->timestamp('updated_at')->useCurrent()->nullable();
         });
     }
 

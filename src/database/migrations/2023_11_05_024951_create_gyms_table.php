@@ -13,9 +13,13 @@ class CreateGymsTable extends Migration
      */
     public function up()
     {
-        Schema::create('_gyms', function (Blueprint $table) {
+        Schema::create('Gyms', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('Gym_setting');
+            $table->string('prefecture');
+            $table->string('city');
+            $table->timestamp('created_at')->useCurrent()->nullable();
+            $table->timestamp('updated_at')->useCurrent()->nullable();
         });
     }
 
@@ -26,6 +30,6 @@ class CreateGymsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_gyms');
+        Schema::dropIfExists('Gyms');
     }
 }

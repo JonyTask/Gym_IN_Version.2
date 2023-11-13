@@ -11,7 +11,7 @@
             <table>
                 @if($items != null)
                     @foreach($items as $item)
-                        <tr><td>{{$item->name}}</td></tr>
+                        <tr><td>{{$item->Gym_setting}}</td></tr>
                     @endforeach
                 @endif
             </table>
@@ -20,7 +20,7 @@
                 <select name="Chat_Gym">
                     @if($items != null)
                         @foreach($items as $item)
-                            <option value="{{$item->name}}">{{$item->name}}</option>
+                            <option value="{{$item->Gym_setting}}">{{$item->Gym_setting}}</option>
                         @endforeach
                     @endif
                 </select>
