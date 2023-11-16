@@ -1,0 +1,101 @@
+body{
+    margin:0;
+    background:#333;
+}
+
+.register-title{
+    color:#ffd700;
+    font-size:35px;
+    margin-top:70px;
+    text-align:center;
+}
+
+.register-form-section{
+    margin:0 auto;
+    padding:80px 60px;
+    padding-bottom:40px;
+    width:50%;
+    background:#ffd700;
+    border-radius:15px;
+}
+
+.name-section,
+.email-section,
+.password-section{
+    margin-bottom:40px;
+}
+
+.name-label,
+.email-label,
+.password-label,
+.confirm-label{
+    display:inline-block;
+    width:40%;
+    font-weight:bold;
+}
+
+.name-input,
+.email-input,
+.password-input,
+.confirm-input{
+    width:50%;
+    outline:none;
+    border:none;
+    background:#333;
+    color:#fff;
+    padding:10px 15px;
+    font-family:sans-serif;
+    border-radius:20px;
+}
+
+.submit-section{
+    text-align:center;
+    margin-top:40px;
+}
+
+.login-input{
+    outline:none;
+    border:none;
+    padding:15px 30px;
+    border-radius:10px;
+    border:2px solid #333;
+    background:#ffd700;
+    font-weight:bold;
+    transition:all 0.3s ease;
+}
+
+.login-input:hover{
+    background:#333;
+    border:2px solid #ffd700;
+    color:#ffd700;
+}
+
+
+
+.attention-section{
+    text-align: center;
+}
+
+.attention-to-login{
+    color:#ffd700;
+}
+
+.intro{
+    font-size:30px;
+    font-weight:bold;
+}
+
+.link-login{
+    text-decoration:none;
+    display:inline-block;
+    padding:10px 60px;
+    border-radius:20px;
+    background:#ffd700;
+    color:#333;
+    font-weight:bold;
+    transition:all 0.3s ease;
+}
+
+.link-login:hover{
+    border-radius:unset;
+}

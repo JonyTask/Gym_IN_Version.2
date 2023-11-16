@@ -17,7 +17,7 @@ class AddColumnsToUsersTable extends Migration
             $table->integer('age')->nullable();
             $table->integer('gender_id')->nullable();
             $table->string('protein')->nullable();
-            $table->string('preMustle');
+            $table->string('preMustle')->nullable();
             $table->string('PR_TEXT')->nullable();
             $table->string('Chat_Gym')->nullable();
         });
