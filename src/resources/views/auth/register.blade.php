@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
 <body>
     <h1 class="register-title">会員登録</h1>
     <div class="register-form-section">
-        <form class="register-form" action="login" method="post">
+        <form class="register-form" action="register" method="post">
             @csrf
             <div class="name-section">
                 <label class="name-label">お名前</label>
@@ -36,7 +36,7 @@
         <p class="attention-to-login">
             会員登録済みの方<br>
             <span class="intro">↓</span><br>
-            <a href="" class="link-login">ログインする</a>
+            <a href="/login" class="link-login">ログインする</a>
         </p>
     </div>
 </body>
